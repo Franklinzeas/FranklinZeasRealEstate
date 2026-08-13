@@ -1,0 +1,17 @@
+---
+layout: base.njk
+---
+<section class="post-hero">
+  <div class="container">
+    <span class="cat">{{ category }}</span>
+    <h1>{{ title }}</h1>
+    <span class="date">{{ date | readableDate }}</span>
+  </div>
+</section>
+{% if image %}
+<div class="post-cover"><img src="{{ image }}" alt="{{ title }}"></div>
+{% endif %}
+<article class="post-body">
+  <a class="post-back" href="/blog/">← Volver al blog</a>
+  {{ content | safe }}
+</article>

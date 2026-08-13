@@ -1,0 +1,210 @@
+---
+layout: base.njk
+title: Franklin Zeas Real Estate | Cuenca, Ecuador
+---
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Cuenca · Azogues · Paute</span>
+      <h1>Propiedades de <em>lujo</em> y alto valor, con un asesor que conoce cada calle</h1>
+      <p class="lede">Compra, venta y administración de Airbnb en el Azuay. Portafolio curado, marketing profesional y una red de compradores lista para tu próxima propiedad.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#propiedades">Ver propiedades</a>
+        <a class="btn btn-ghost" href="#contacto">Quiero vender mi propiedad</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">547-A</div><div class="lbl">Licencia ACBIR Azuay</div></div>
+        <div class="hero-stat"><div class="num">Cuenca</div><div class="lbl">Azogues · Paute</div></div>
+        <div class="hero-stat"><div class="num">7.5%</div><div class="lbl">Financiamiento desde</div></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <span class="tag">DESTACADA</span>
+      <h3>Casa en Ciudad del Río</h3>
+      <div class="loc">Narancay · Cuenca</div>
+      <div class="price">$280,000</div>
+      <div class="divider"></div>
+      <div class="meta">
+        <span>5 hab.</span><span>373 m²</span><span>Jacuzzi · BBQ</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="value-band">
+  <div class="container value-grid">
+    <div class="value-item">
+      <div class="num">I.</div>
+      <h3>Especialización en lujo</h3>
+      <p>Enfoque exclusivo en propiedades de alto valor en Cuenca, Azogues y Paute — no vendo de todo, vendo lo correcto para cada cliente.</p>
+    </div>
+    <div class="value-item">
+      <div class="num">II.</div>
+      <h3>Marketing profesional</h3>
+      <p>Fotografía de marca, fichas técnicas y difusión en redes con identidad propia, para que tu propiedad se vea como lo que vale.</p>
+    </div>
+    <div class="value-item">
+      <div class="num">III.</div>
+      <h3>Red de compradores activa</h3>
+      <p>Contacto directo con compradores e inversionistas ya calificados, listos para propiedades exclusivas en el Azuay.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="propiedades">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Portafolio</span>
+        <h2>Propiedades disponibles</h2>
+      </div>
+      <div class="filters" id="filters">
+        <button class="filter-btn active" data-filter="todas">Todas</button>
+        <button class="filter-btn" data-filter="Casa">Casas</button>
+        <button class="filter-btn" data-filter="Departamento">Departamentos</button>
+        <button class="filter-btn" data-filter="Quinta">Quintas / Airbnb</button>
+      </div>
+    </div>
+    <div class="prop-grid" id="propGrid"></div>
+  </div>
+</section>
+
+<section class="section blog-band" id="blog">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Recursos</span>
+        <h2>Últimos artículos del blog</h2>
+      </div>
+      <a class="btn btn-ghost" href="/blog/">Ver todo el blog</a>
+    </div>
+    <div class="blog-grid">
+      {% for post in collections.blog | reverse %}
+        {% if loop.index <= 3 %}
+        <a class="blog-card" href="{{ post.url }}">
+          {% if post.data.image %}
+          <div class="blog-cover" style="background-image:url('{{ post.data.image }}')"></div>
+          {% else %}
+          <div class="blog-cover"></div>
+          {% endif %}
+          <div class="blog-body">
+            <div class="blog-top">
+              <span class="cat">{{ post.data.category }}</span>
+              <span class="date">{{ post.data.date | readableDate }}</span>
+            </div>
+            <h3>{{ post.data.title }}</h3>
+            <p>{{ post.data.excerpt }}</p>
+            <span class="read">Leer artículo →</span>
+          </div>
+        </a>
+        {% endif %}
+      {% else %}
+        <p class="blog-empty">Todavía no hay artículos publicados. ¡El primero está por venir!</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="financing" id="financiamiento">
+  <div class="container financing-grid">
+    <div>
+      <span class="eyebrow">Financiamiento</span>
+      <h2>Tasas de referencia para tu compra</h2>
+      <p>Te oriento en el proceso completo de financiamiento, desde la precalificación hasta la escritura. Estas son tasas anuales de referencia en el mercado ecuatoriano.</p>
+      <a class="btn btn-gold" style="margin-top:24px;" href="#contacto">Consultar mi caso</a>
+    </div>
+    <div class="rate-card">
+      <div class="rate-row"><span class="bank">BIESS (afiliados IESS)</span><span class="rate">desde 6.93%</span></div>
+      <div class="rate-row"><span class="bank">Banco del Pacífico</span><span class="rate">desde 7.5%</span></div>
+      <div class="rate-row"><span class="bank">Cooperativas</span><span class="rate">9% – 12%</span></div>
+      <div class="rate-row"><span class="bank">Banca privada</span><span class="rate">8.5% – 11.5%</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="nosotros">
+  <div class="container about-grid">
+    <div class="about-photo">
+      <div class="mono">FZ</div>
+    </div>
+    <div class="about-copy">
+      <span class="eyebrow">Sobre mí</span>
+      <h2>Franklin Zeas Barrera</h2>
+      <p>Originario de Paute, asesor inmobiliario licenciado (547-A, ACBIR Azuay) especializado en propiedades de lujo y alto valor en Cuenca, Azogues y Paute.</p>
+      <p>Acompaño todo el proceso — compra, venta y administración de Airbnb — con marketing profesional y verificación legal de cada propiedad, para que tomes la decisión con toda la información en la mano.</p>
+      <div class="about-tags">
+        <span>Compra y venta</span>
+        <span>Administración Airbnb</span>
+        <span>Propiedades exclusivas</span>
+        <span>@franklinzeas.realtor</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="container">
+    <span class="eyebrow">Hablemos</span>
+    <h2>¿Buscas comprar, vender o administrar tu propiedad?</h2>
+    <p>Escríbeme directamente por WhatsApp o Instagram y te respondo personalmente — sin intermediarios.</p>
+    <div class="contact-actions">
+      <a class="btn btn-gold" href="https://wa.me/593969851813" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+      <a class="btn btn-ghost" href="https://instagram.com/franklinzeas.realtor" target="_blank" rel="noopener">@franklinzeas.realtor</a>
+    </div>
+  </div>
+</section>
+
+{% block scripts %}
+<script>
+// ---- EDITA ESTA LISTA CON TUS PROPIEDADES REALES ----
+const properties = [
+  { tipo: "Casa", titulo: "Casa en Ciudad del Río", ubicacion: "Narancay, Cuenca", precio: 280000, specs: ["5 hab.", "373 m²", "Amoblada"] },
+  { tipo: "Casa", titulo: "Casa en Misicata", ubicacion: "Av. del Tejar y Ordóñez Lasso, Cuenca", precio: 165000, specs: ["4 hab.", "3 baños", "170 m²"] },
+  { tipo: "Departamento", titulo: "Departamento Remigio Crespo", ubicacion: "Remigio Crespo, Cuenca", precio: 98000, specs: ["2 hab.", "2 baños", "Amoblado"] },
+  { tipo: "Quinta", titulo: "Quinta con potencial Airbnb", ubicacion: "Paute", precio: 135000, specs: ["Terreno amplio", "Casa principal", "Zona de río"] },
+];
+const grid = document.getElementById('propGrid');
+const money = n => '$' + n.toLocaleString('en-US');
+function renderProperties(filter){
+  grid.innerHTML = '';
+  const list = filter === 'todas' ? properties : properties.filter(p => p.tipo === filter);
+  if(list.length === 0){
+    grid.innerHTML = '<p style="color:var(--stone); font-size:.9rem;">Aún no hay propiedades en esta categoría. Vuelve pronto.</p>';
+    return;
+  }
+  list.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'prop-card';
+    card.innerHTML = `
+      <div class="prop-photo">
+        <div class="texture"></div>
+        <span class="en-venta">EN VENTA</span>
+        <div class="lion">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="9"/></svg>
+          <span>F. ZEAS</span>
+        </div>
+      </div>
+      <div class="prop-body">
+        <div class="ptype">${p.tipo}</div>
+        <h3>${p.titulo}</h3>
+        <div class="loc">${p.ubicacion}</div>
+        <div class="prop-specs">${p.specs.map(s => `<span>${s}</span>`).join('')}</div>
+        <div class="prop-foot">
+          <span class="price">${money(p.precio)}</span>
+          <a href="https://wa.me/593969851813?text=Hola%20Franklin,%20me%20interesa%20${encodeURIComponent(p.titulo)}" target="_blank" rel="noopener">Consultar →</a>
+        </div>
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+renderProperties('todas');
+document.getElementById('filters').addEventListener('click', e => {
+  const btn = e.target.closest('.filter-btn');
+  if(!btn) return;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderProperties(btn.dataset.filter);
+});
+</script>
+{% endblock %}

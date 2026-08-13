@@ -1,0 +1,37 @@
+---
+layout: base.njk
+title: Blog | Franklin Zeas Real Estate
+permalink: /blog/
+---
+<section class="section blog-band">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">Recursos</span>
+        <h2>Blog inmobiliario</h2>
+      </div>
+    </div>
+    <div class="blog-grid">
+      {% for post in collections.blog | reverse %}
+        <a class="blog-card" href="{{ post.url }}">
+          {% if post.data.image %}
+          <div class="blog-cover" style="background-image:url('{{ post.data.image }}')"></div>
+          {% else %}
+          <div class="blog-cover"></div>
+          {% endif %}
+          <div class="blog-body">
+            <div class="blog-top">
+              <span class="cat">{{ post.data.category }}</span>
+              <span class="date">{{ post.data.date | readableDate }}</span>
+            </div>
+            <h3>{{ post.data.title }}</h3>
+            <p>{{ post.data.excerpt }}</p>
+            <span class="read">Leer artículo →</span>
+          </div>
+        </a>
+      {% else %}
+        <p class="blog-empty">Todavía no hay artículos publicados. ¡El primero está por venir!</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>

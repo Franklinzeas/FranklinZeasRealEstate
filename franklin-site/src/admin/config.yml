@@ -1,0 +1,31 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# ⚠️ Antes de publicar: no necesitas tocar este archivo,
+# Netlify Identity + Git Gateway se conectan solos al repositorio
+# que subas a GitHub y conectes en Netlify.
+
+media_folder: "src/images/uploads"
+public_folder: "/images/uploads"
+
+site_url: https://TU-SITIO.netlify.app
+display_url: https://TU-SITIO.netlify.app
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: "title"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Fecha", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+      - label: "Categoría"
+        name: "category"
+        widget: "select"
+        options: ["Compra", "Venta", "Financiamiento", "Airbnb", "Cuenca", "Otro"]
+      - { label: "Resumen corto", name: "excerpt", widget: "text" }
+      - { label: "Foto de portada", name: "image", widget: "image", required: false }
+      - { label: "Contenido", name: "body", widget: "markdown" }

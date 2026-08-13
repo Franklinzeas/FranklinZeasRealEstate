@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ title or "Franklin Zeas Real Estate | Cuenca, Ecuador" }}</title>
+<meta name="description" content="{{ description or 'Franklin Zeas, asesor inmobiliario licenciado (Guapic Inmobiliaria 547-A) en Cuenca, Azogues y Paute. Compra, venta y administración de Airbnb.' }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="/">
+      <div class="brand-mark">FZ</div>
+      <div class="brand-text">
+        <div class="name">FRANKLIN ZEAS</div>
+        <div class="sub">Real Estate · Guapic Inmobiliaria 547-A</div>
+      </div>
+    </a>
+    <nav class="links">
+      <a href="/#propiedades">Propiedades</a>
+      <a href="/blog/">Blog</a>
+      <a href="/#financiamiento">Financiamiento</a>
+      <a href="/#nosotros">Sobre mí</a>
+      <a href="/#contacto">Contacto</a>
+    </nav>
+    <a class="nav-cta" href="/#contacto">Hablemos por WhatsApp</a>
+    <button class="burger" aria-label="Menú">☰</button>
+  </div>
+</header>
+
+{{ content | safe }}
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand-mark" style="width:26px;height:26px;font-size:.62rem;">FZ</div>
+        FRANKLIN ZEAS REAL ESTATE
+      </div>
+      <div class="footer-links">
+        <a href="/#propiedades">Propiedades</a>
+        <a href="/blog/">Blog</a>
+        <a href="/#financiamiento">Financiamiento</a>
+        <a href="/#nosotros">Sobre mí</a>
+        <a href="/#contacto">Contacto</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Guapic Inmobiliaria — Franklin Zeas Barrera</span>
+      <span>Lic. 547-A · ACBIR Azuay · Cuenca, Ecuador</span>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+{% block scripts %}{% endblock %}
+</body>
+</html>
