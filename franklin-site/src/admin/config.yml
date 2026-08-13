@@ -6,16 +6,15 @@ backend:
 # Netlify Identity + Git Gateway se conectan solos al repositorio
 # que subas a GitHub y conectes en Netlify.
 
-media_folder: "src/images/uploads"
+media_folder: "franklin-site/src/images/uploads"
 public_folder: "/images/uploads"
 
-site_url: https://TU-SITIO.netlify.app
-display_url: https://TU-SITIO.netlify.app
-
+site_url: https://comfy-alpaca-8ad740.netlify.app 
+display_url: https://comfy-alpaca-8ad740.netlify.app
 collections:
   - name: "blog"
     label: "Blog"
-    folder: "src/content/blog"
+    folder: "franklin-site/src/content/blog"
     create: true
     slug: "{{slug}}"
     identifier_field: "title"
