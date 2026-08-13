@@ -57,6 +57,8 @@
 </footer>
 
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script> <script> if (window.netlifyIdentity) { window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; }); } </script>
 {% block scripts %}{% endblock %}
 </body>
 </html>
+
