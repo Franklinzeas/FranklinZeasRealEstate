@@ -28,3 +28,25 @@ collections:
       - { label: "Resumen corto", name: "excerpt", widget: "text" }
       - { label: "Foto de portada", name: "image", widget: "image", required: false }
       - { label: "Contenido", name: "body", widget: "markdown" }
+
+- name: "properties"
+    label: "Propiedades"
+    folder: "franklin-site/src/content/properties"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: "title"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Ubicación", name: "location", widget: "string" }
+      - label: "Tipo"
+        name: "type"
+        widget: "select"
+        options: ["Casa", "Departamento", "Terreno", "Quinta"]
+      - { label: "Precio (USD)", name: "price", widget: "number", value_type: "int" }
+      - label: "Características (agrega una por línea, ej. 5 hab., 373 m², Jacuzzi)"
+        name: "specs"
+        widget: "list"
+      - { label: "Foto de portada", name: "image", widget: "image", required: false }
+      - { label: "tags", name: "tags", widget: "hidden", default: ["propiedades"] }
+      - { label: "permalink", name: "permalink", widget: "hidden", default: false }
+      
